@@ -9,10 +9,6 @@ const config: Config = {
   ],
   theme: {
   	extend: {
-  		backgroundImage: {
-  			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-  			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
-  		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
@@ -22,8 +18,28 @@ const config: Config = {
   			dark: {
 				  1: '#1C1F2E',
 				  2: '#161925'
-			  }
-		}
+			  },
+			blue: {
+				  1: '#0E78F9',
+			},
+			sky: {
+				1: '#C9DDFF',
+				2: '#ECF0FF',
+				3: '#F5FCFF',
+			},
+			orange: {
+				1: '#FF742E',
+			},
+			purple: {
+				1: '#830EF9',
+			},
+			yellow: {
+				1: '#F9A90E',
+			},
+		},
+		backgroundImage: {
+			hero: "url('/images/hero-background.png')",
+		},
   	}
   },
   plugins: [require("tailwindcss-animate")],

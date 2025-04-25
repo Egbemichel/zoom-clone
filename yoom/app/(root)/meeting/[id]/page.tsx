@@ -1,8 +1,24 @@
-import React from 'react'
+'use client'
+import {useUser} from "@clerk/nextjs";
+import {StreamCall, StreamTheme} from "@stream-io/video-react-sdk";
+import {useState} from "react";
 
 const Meeting = ( {params} : {params:{id: String}}) => {
+    const { user, isLoaded} = useUser();
+    const [isSetupComplete, setIsSetupComplete] = useState(false)
     return (
-        <div>Meeting Room: #{params.id}</div>
+        <main className="h-screen w-full">
+            <StreamCall>
+                <StreamTheme>
+                    {!isSetupComplete ? (
+                        'meeting setup'
+                    ):(
+                        'meeting room'
+                    )}
+
+                </StreamTheme>
+            </StreamCall>
+        </main>
     )
 }
 export default Meeting
